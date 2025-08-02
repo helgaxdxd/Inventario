@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card p-4">
+    <h3>Agregar equipo</h3>
+    <form method="POST">
+        <div class="row g-3">
+            <div class="col-md-6"><input type="text" name="nombre_equipo" class="form-control" placeholder="Nombre del equipo" required></div>
+            <div class="col-md-6"><input type="text" name="responsable" class="form-control" placeholder="Responsable"></div>
+            <div class="col-md-6"><input type="text" name="sistema_operativo" class="form-control" placeholder="Sistema Operativo"></div>
+            <div class="col-md-6"><input type="text" name="office" class="form-control" placeholder="Office"></div>
+            <div class="col-md-6"><input type="text" name="area_asignada" class="form-control" placeholder="Área asignada"></div>
+            <div class="col-md-6"><input type="text" name="tipo" class="form-control" placeholder="Tipo (Laptop/Desktop)"></div>
+            <div class="col-md-6"><input type="text" name="marca" class="form-control" placeholder="Marca"></div>
+            <div class="col-md-6"><input type="text" name="modelo" class="form-control" placeholder="Modelo"></div>
+            <div class="col-md-6"><input type="text" name="numero_serie" class="form-control" placeholder="Número de serie"></div>
+            <div class="col-md-6"><input type="text" name="disco_duro" class="form-control" placeholder="Disco duro"></div>
+            <div class="col-md-6"><input type="text" name="mac_address" class="form-control" placeholder="MAC Address"></div>
+            <div class="col-md-6"><input type="text" name="ip_address" class="form-control" placeholder="IP"></div>
+            <div class="col-md-6"><select name="estado" class="form-select">
+                <option value="uso">En uso</option>
+                <option value="nuevo">Nuevo</option>
+                <option value="reparacion">En reparación</option>
+            </select></div>
+            <div class="col-md-12"><textarea name="comentarios" class="form-control" placeholder="Comentarios"></textarea></div>
+        </div>
+        <div class="mt-3 text-center">
+            <button class="btn btn-success">Guardar</button>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

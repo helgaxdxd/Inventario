@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Inventario de Equipos{% endblock %}
+{% block content %}
+<h2>Inventario de Equipos</h2>
+<a href="{{ url_for('crear') }}" class="btn btn-success mb-3">➕ Nuevo equipo</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Responsable</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for e in equipos %}
+        <tr>
+            <td>{{ e.nombre_equipo }}</td>
+            <td>{{ e.responsable }}</td>
+            <td>{{ e.estado }}</td>
+            <td>
+                <a href="{{ url_for('editar', id=e.id) }}" class="btn btn-warning btn-sm">Editar</a>
+                <a href="{{ url_for('eliminar', id=e.id) }}" class="btn btn-danger btn-sm"
+                   onclick="return confirm('¿Seguro que deseas eliminar este equipo?')">Eliminar</a>
+                <a href="{{ url_for('responsiva', id=e.id) }}" class="btn btn-info btn-sm">Responsiva PDF</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
