@@ -18,7 +18,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 
-DB_PASSWORD = "MiClaveSegura123"  # cámbiala
+DB_PASSWORD = "MiClaveSegura123"  
 
 @event.listens_for(Engine, "connect")
 def set_sqlcipher_key(dbapi_connection, connection_record):
